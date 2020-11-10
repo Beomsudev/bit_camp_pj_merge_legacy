@@ -2,7 +2,7 @@ import logging
 from flask import Blueprint
 from flask_restful import Api
 from com_dayoung_api.usr.resource.user import User, Users, Delete
-from com_dayoung_api.cop.act.resource.auth import Auth
+from com_dayoung_api.usr.resource.auth import Auth
 from com_dayoung_api.usr.resource.access import Access
 
 from com_dayoung_api.cop.act.resource.actor import Actor, Actors, AddActor
