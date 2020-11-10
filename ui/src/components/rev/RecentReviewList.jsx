@@ -8,8 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import axios from 'axios';
-import StarRateIcon from '@material-ui/icons/StarRate';
 import './rev.style.css'
+import {Emoji} from '../cmm'
 
 const useStyles = makeStyles((theme) => ({
   seeMore: {
@@ -31,38 +31,38 @@ export default function RecentReviewList() {
       throw(e)
     })
 },[])
-  return (
-    <React.Fragment>
-      <Title>Recent Reviews</Title>
-      <Table size="small" className = "tbsize">
-        <TableHead>
-          <TableRow>
-            
-            <TableCell>ID</TableCell>
-            <TableCell>영화</TableCell>
-            <TableCell>리뷰 제목</TableCell>
-            <TableCell align="right">별점</TableCell>
+return (
+  <React.Fragment>
+    <Title>Recent Reviews</Title>
+    <Table size="small" className = "tbsize">
+      <TableHead>
+        <TableRow>
+          
+          {/* <TableCell>ID</TableCell> */}
+          <TableCell>영화</TableCell>
+          <TableCell>리뷰 제목</TableCell>
+          <TableCell align="right">평가</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {data.map((i, index) => (
+          <TableRow key={index}>
+            {/* <TableCell>{i.user_id}</TableCell> */}
+            <TableCell>{i.movie_id}</TableCell>
+            <TableCell>{i.title}</TableCell>
+            <TableCell align="right">{((i.label == 1) ? <Emoji symbol="⭐️"/> : <Emoji symbol="❌"/>)}</TableCell>
           </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((i, index) => (
-            <TableRow key={index}>
-              <TableCell>{i.user_id}</TableCell>
-              <TableCell>{i.movie_id}</TableCell>
-              <TableCell>{i.title}</TableCell>
-              <TableCell align="right">F</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div className={classes.seeMore}>
-        <Link className = "writereview" color="primary" href ="/write-review">
-          리뷰 작성
-        </Link>
-        <Link className = "writereview" color="primary" href="/review-list">
-          전체 리뷰 보기
-        </Link>
-      </div>
-    </React.Fragment>
+        ))}
+      </TableBody>
+    </Table>
+    <div className={classes.seeMore}>
+      <Link className = "writereview" color="primary" href ="/write-review">
+        리뷰 작성
+      </Link>
+      <Link className = "writereview" color="primary" href="/review-list">
+        전체 리뷰 보기
+      </Link>
+    </div>
+  </React.Fragment>
   );
 }

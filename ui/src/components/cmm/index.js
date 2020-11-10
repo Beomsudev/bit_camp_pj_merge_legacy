@@ -6,4 +6,5 @@ export {MovieMenu} from './Menu'
 export {ItemMenu} from './Menu'
 export {AuthMenu} from './Menu'
 export {ActorMenu} from './Menu'
+export {default as Emoji} from './Emoji'
 

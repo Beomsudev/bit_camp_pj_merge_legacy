@@ -10,6 +10,7 @@ import Title from './Title';
 import axios from 'axios';
 import {context as c} from '../../context'
 import './rev.style.css'
+import {Emoji} from '../cmm'
 
 const useStyles = makeStyles((theme) => ({
   seeMore: {
@@ -73,7 +74,7 @@ const revid = e => {
             <TableCell>ID</TableCell>
             <TableCell>영화</TableCell>
             <TableCell>리뷰 제목</TableCell>
-            <TableCell>별점</TableCell>
+            <TableCell>평가</TableCell>
             <TableCell align="right">수정</TableCell>
           </TableRow>
         </TableHead>
@@ -83,7 +84,7 @@ const revid = e => {
                 <TableCell>{i.usr_id}</TableCell>
                 <TableCell>{i.mov_id}</TableCell>
                 <TableCell>{i.title}</TableCell>
-                <TableCell>F</TableCell>
+                <TableCell>{((i.label == 1) ? <Emoji symbol="⭐️"/> : <Emoji symbol="❌"/>)}</TableCell>
                 <TableCell align="right">
                     <button>
                         <Link to="/edit-review" rev-id={i.rev_id} onClick={revid}>
