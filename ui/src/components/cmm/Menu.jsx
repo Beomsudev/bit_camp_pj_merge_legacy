@@ -27,10 +27,8 @@ export const RatingMenu = () => (<nav>
 
 export const ActorMenu = () => <nav>
     <ol>
-        <li><Link to = '/actorhome'>Actor Home</Link></li>
         <li><Link to = '/actorquiz'>Actor Quiz</Link></li>
         <li><Link to = '/actorquizsingle'>Actor Quiz Single</Link></li>
-        <li><Link to = '/actorlist'>Actor List</Link></li>
 
     </ol>
 

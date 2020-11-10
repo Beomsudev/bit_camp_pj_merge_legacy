@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import { Nav } from './components/cmm'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { Home, User, Actor, Movie, Rating } from './templates'
-import {UserLogin, UserRegister, UserList, UserSearch, UserProfile} from './containers/usr'
-import {ActorHome, ActorQuiz, ActorList,ActorQuizSingle} from './containers/act'
-import {RatingDetail, RatingList, RatingModify, RatingRegister, RatingRemove} from './containers/rat'
-import {MovieDetail, MovieList, MovieModify, MovieRegister, MovieRemove} from './containers/mov'
-import {ReviewContainer, ReviewListContainer, MyReview, ReviewWrite, ReviewEdit} from './containers/rev'
-import {Chatbot} from './containers/cht'
+import { UserLogin, UserRegister, UserList, UserSearch, UserProfile } from './containers/usr'
+import { ActorQuiz, ActorQuizSingle } from './containers/act'
+import { RatingDetail, RatingList, RatingModify, RatingRegister, RatingRemove } from './containers/rat'
+import { MovieDetail, MovieList, MovieModify, MovieRegister, MovieRemove } from './containers/mov'
+import { ReviewContainer, ReviewListContainer, MyReview, ReviewWrite, ReviewEdit } from './containers/rev'
+import { Chatbot } from './containers/cht'
 
 // react -> redux -> thunk -> saga -> Mobx
 export default function App(){
@@ -23,8 +23,6 @@ export default function App(){
       <Route path ='/userregister' component={UserRegister}/>
       <Route path='/userlist' component={UserList}/>
       <Route path='/usersearch' component={UserSearch}/>
-      <Route path='/actorlist' component={ActorList}/>
-      <Route path ='/actorhome' component={ActorHome}/>
       <Route path ='/actorquiz' component={ActorQuiz}/>
       <Route path ='/actorquizsingle' component={ActorQuizSingle}/>
       <Route path ='/userprofile' component={UserProfile}/>

@@ -65,7 +65,7 @@ const UserRegister = () => {
         
         e.preventDefault()
         axios.post(`http://localhost:8080/api/auth`, {
-            'user_id':email, 'password':password,  'gender':gender, 'email':email, 'lname':lname, 'fname':fname, 'age':age,
+            'usr_id':email, 'password':password,  'gender':gender, 'email':email, 'lname':lname, 'fname':fname, 'age':age,
         })
         .then(res=>{
             alert(`아이디 생성`)

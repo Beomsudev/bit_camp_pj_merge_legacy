@@ -104,7 +104,7 @@ export default function SearchAppBar() {
             <Link to="/userlogin" className={classes.link}>로그인</Link>
           </Button>
           <Button>
-            <Link to="/actorlist" className={classes.link}>배우</Link>
+            <Link to="/actorquiz" className={classes.link}>배우</Link>
           </Button>
           <Button>
             <Link to="/review-container" className={classes.link}>리뷰</Link>
